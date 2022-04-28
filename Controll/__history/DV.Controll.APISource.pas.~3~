@@ -1,0 +1,39 @@
+unit DV.Controll.APISource;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uDWAbout, uRESTDWServerEvents,UDWDataModule,
+  DVL.Controll.Interfaces, DVL.Controll.MainClass, uDWJSONObject;
+
+type
+  TAPISource = class(TServerMethodDataModule)
+    ServerEvent: TDWServerEvents;
+    procedure ServerEventEventsstatusReplyEvent(var Params: TDWParams;
+      var Result: string);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+ //EndPoints CRUDs - Insert - Update - Delete
+ //data - View All Sources in DB
+
+
+var
+  APISource: TAPISource;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TAPISource.ServerEventEventsstatusReplyEvent(var Params: TDWParams;
+  var Result: string);
+begin
+ Result := '{"Status": OK,"Time":'+FormatDateTime('hh:mm:ss',TIME) +'}';
+end;
+
+end.

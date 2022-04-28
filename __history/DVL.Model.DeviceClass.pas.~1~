@@ -1,0 +1,24 @@
+unit DVL.Model.DeviceClass;
+
+interface
+
+  type
+    TDevices = class(TInterfacedObject, IDevice)
+
+    private
+        _FDID :Integer;
+        _FName : String;
+        _FAddress : String;
+
+    public
+      function ID_Device( _ID : Integer) : IDevice;
+      function Device_Name( _Name : String) : IDevice;
+      function Device_Address( _Address : String) : IDevice;
+      procedure UpdateRegister;
+      procedure DeleteRegister;
+      procedure InsertRegister;
+    end;
+
+implementation
+
+end.

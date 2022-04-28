@@ -1,0 +1,26 @@
+unit DV.Controll.APISource;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uDWAbout, uRESTDWServerEvents,UDWDataModule;
+
+type
+  TAPISource = class(TServerMethodDataModule)
+    ServerEvent: TDWServerEvents;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  APISource: TAPISource;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

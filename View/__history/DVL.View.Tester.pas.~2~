@@ -1,0 +1,32 @@
+unit DVL.View.Tester;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DVL.Controll.Interfaces,
+  DVL.Controll.MainClass;
+
+type
+  TuFormTester = class(TForm)
+    edtName: TEdit;
+    edtID: TEdit;
+    edtAddress: TEdit;
+    Delete: TButton;
+    Insert: TButton;
+    Update: TButton;
+  private
+    { Private declarations }
+    Device : IControllDevice;
+  public
+    { Public declarations }
+  end;
+
+var
+  uFormTester: TuFormTester;
+
+implementation
+
+{$R *.dfm}
+
+end.

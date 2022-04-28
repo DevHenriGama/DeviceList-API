@@ -1,0 +1,61 @@
+unit DVL.Model.DeviceClass;
+
+interface
+
+uses DVL.Model.Interfaces;
+
+  type
+    TDevices = class(TInterfacedObject, IDevice)
+
+    private
+        _FDID :Integer;
+        _FName : String;
+        _FAddress : String;
+    public
+      function ID_Device( _ID : Integer) : IDevice;
+      function Device_Name( _Name : String) : IDevice;
+      function Device_Address( _Address : String) : IDevice;
+      procedure UpdateRegister;
+      procedure DeleteRegister;
+      procedure InsertRegister;
+    end;
+
+implementation
+
+
+
+{ TDevices }
+
+procedure TDevices.DeleteRegister;
+begin
+ //delete
+end;
+
+function TDevices.Device_Address(_Address: String): IDevice;
+begin
+ Result := Self;
+ _FAddress := _Address;
+end;
+
+function TDevices.Device_Name(_Name: String): IDevice;
+begin
+ Result := Self;
+ _FName := _Name;
+end;
+
+function TDevices.ID_Device(_ID: Integer): IDevice;
+begin
+
+end;
+
+procedure TDevices.InsertRegister;
+begin
+
+end;
+
+procedure TDevices.UpdateRegister;
+begin
+
+end;
+
+end.

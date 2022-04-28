@@ -1,0 +1,12 @@
+unit DVL.Model.Interfaces;
+
+interface
+  type
+    IDevice = interface
+      ['{3D5A03D9-84A0-4FA1-873C-A24FF926E20B}']
+
+    end;
+
+implementation
+
+end.

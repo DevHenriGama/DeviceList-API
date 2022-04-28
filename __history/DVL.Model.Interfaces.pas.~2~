@@ -1,0 +1,17 @@
+unit DVL.Model.Interfaces;
+
+interface
+  type
+    IDevice = interface
+      ['{3D5A03D9-84A0-4FA1-873C-A24FF926E20B}']
+      function ID_Device( _ID : Integer) : IDevice;
+      function Device_Name( _Name : String) : IDevice;
+      function Device_Address( _Address : String) : IDevice;
+      procedure UpdateRegister;
+      procedure DeleteRegister;
+      procedure InsertRegister;
+    end;
+
+implementation
+
+end.

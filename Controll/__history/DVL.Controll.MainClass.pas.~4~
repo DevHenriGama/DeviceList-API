@@ -1,0 +1,50 @@
+unit DVL.Controll.MainClass;
+
+interface
+
+uses DVL.Controll.Interfaces;
+
+  type
+    TControllDevice = class(TInterfacedObject, IControllDevice)
+    private
+    FDeviceAddress: String;
+    FDeviceName: String;
+    FID: Integer;
+
+    public
+    Class function New : IControllDevice;
+    function ID( _ID : Integer) : IControllDevice;
+    function DeviceName(_Name : String) : IControllDevice;
+    function DeviceAddress(_Address : String) : IControllDevice;
+    procedure NewDevice;
+    procedure UpdateDevice;
+    procedure DeleteDevice;
+
+    end;
+
+implementation
+
+{ TControllDevice }
+
+
+procedure TControllDevice.DeleteDevice;
+begin
+
+end;
+
+class function TControllDevice.New: IControllDevice;
+begin
+Result := Self.Create;
+end;
+
+procedure TControllDevice.NewDevice;
+begin
+
+end;
+
+procedure TControllDevice.UpdateDevice;
+begin
+
+end;
+
+end.

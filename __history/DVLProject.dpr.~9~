@@ -1,0 +1,22 @@
+program DVLProject;
+
+uses
+  Vcl.Forms,
+  DVL.View.Main in 'DVL.View.Main.pas' {frmMain},
+  DVL.DAO.DataModule in 'DVL.DAO.DataModule.pas' {dmDados: TDataModule},
+  DVL.Model.DeviceClass in 'DVL.Model.DeviceClass.pas',
+  DVL.Model.Interfaces in 'DVL.Model.Interfaces.pas',
+  DVL.DAO.IRequest in 'DVL.DAO.IRequest.pas',
+  DVL.DAO.RequestClass in 'DVL.DAO.RequestClass.pas',
+  DVL.Controll.MainClass in 'Controll\DVL.Controll.MainClass.pas',
+  DVL.Controll.Interfaces in 'Controll\DVL.Controll.Interfaces.pas',
+  DVL.View.Tester in 'View\DVL.View.Tester.pas' {uFormTester};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TuFormTester, uFormTester);
+  Application.Run;
+end.

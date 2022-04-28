@@ -1,0 +1,52 @@
+unit DVL.DAO.RequestClass;
+
+
+interface
+
+uses DVL.DAO.IRequest;
+  type
+
+    TDAORequest = class(TInterfacedObject, IDAORequest)
+    private
+
+    public
+    constructor Create;
+    destructor Destroy;
+    procedure Update;
+    procedure Insert;
+    procedure Delete;
+
+    end;
+
+implementation
+
+
+
+{ TDAORequest }
+
+constructor TDAORequest.Create;
+begin
+
+end;
+
+procedure TDAORequest.Delete;
+begin
+
+end;
+
+destructor TDAORequest.Destroy;
+begin
+
+end;
+
+procedure TDAORequest.Insert;
+begin
+
+end;
+
+procedure TDAORequest.Update;
+begin
+
+end;
+
+end.
