@@ -8,6 +8,21 @@ object dmDados: TdmDados
       'SELECT * FROM DEVICE')
     Left = 48
     Top = 104
+    object fdQueryMainID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object fdQueryMainNAME: TStringField
+      FieldName = 'NAME'
+      Origin = 'NAME'
+      Size = 32767
+    end
+    object fdQueryMainADDRESS: TStringField
+      FieldName = 'ADDRESS'
+      Origin = 'ADDRESS'
+      Size = 32767
+    end
   end
   object fdMainConnection: TFDConnection
     Params.Strings = (

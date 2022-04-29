@@ -3,23 +3,28 @@ unit DVL.DAO.RequestClass;
 
 interface
 
-uses DVL.DAO.IRequest,DVL.DAO.DataModule, DVL.Model.DeviceClass;
+uses DVL.DAO.IRequest,DVL.DAO.DataModule, DVL.Model.DeviceClass,
+  System.Classes;
   type
 
     TDAORequest = class(TInterfacedObject, IDAORequest)
     private
      FDevices : TDevices;
      _data : TdmDados;
+     _objList : TStringList;
     public
     constructor Create(DeviceClass :TDevices);
     destructor Destroy; override;
     procedure Update;
     procedure Insert;
     procedure Delete;
+    function GetData : TStringList;
 
     end;
 
 implementation
+
+uses System.JSON, System.SysUtils;
 
 
 
@@ -30,6 +35,7 @@ constructor TDAORequest.Create(DeviceClass: TDevices);
 begin
  FDevices := DeviceClass;
  _data := TdmDados.Create(nil);
+ _objList := TStringList.Create;
 end;
 
 procedure TDAORequest.Delete;
@@ -46,8 +52,39 @@ end;
 
 destructor TDAORequest.Destroy;
 begin
+    _objList.Free;
     _data.Free;
   inherited;
+end;
+
+function TDAORequest.GetData: TStringList;
+var jObject : TJSONObject; I : Integer;
+begin
+ try
+   jObject := TJSONObject.Create;
+    with _data.fdQueryMain do begin
+   Close;
+   SQL.Clear;
+   SQL.Add('SELECT * FROM DEVICE');
+   Open;
+
+   _objList.Add('{"total":' + IntToStr(RecordCount) + '}');
+
+   if RecordCount > 0 then begin
+     for I := 0 to RecordCount -1 do begin
+       jObject.AddPair(FieldByName('NAME').Text,FieldByName('ADDRESS').Text);
+       _objList.Add(jObject.ToString);
+
+          if not EOF then
+              Next;
+     end;
+
+   end;
+   Result := _objList;
+ end;
+ finally
+   jObject.Free;
+ end;
 end;
 
 procedure TDAORequest.Insert;

@@ -2,7 +2,8 @@ unit DVL.Controll.MainClass;
 
 interface
 
-uses DVL.Controll.Interfaces, DVL.Model.DeviceClass, DVL.Model.Interfaces;
+uses DVL.Controll.Interfaces, DVL.Model.DeviceClass, DVL.Model.Interfaces,
+  System.Classes;
 
   type
     TControllDevice = class(TInterfacedObject, IControllDevice)
@@ -17,6 +18,7 @@ uses DVL.Controll.Interfaces, DVL.Model.DeviceClass, DVL.Model.Interfaces;
     function ID( _ID : Integer) : IControllDevice;
     function DeviceName(_Name : String) : IControllDevice;
     function DeviceAddress(_Address : String) : IControllDevice;
+    function GetDevices : TStringList;
     procedure NewDevice;
     procedure UpdateDevice;
     procedure DeleteDevice;
@@ -51,6 +53,11 @@ function TControllDevice.DeviceName(_Name: String): IControllDevice;
 begin
 Result := Self;
 FDeviceName := _Name;
+end;
+
+function TControllDevice.GetDevices: TStringList;
+begin
+ Result := Device.GetData;
 end;
 
 function TControllDevice.ID(_ID: Integer): IControllDevice;

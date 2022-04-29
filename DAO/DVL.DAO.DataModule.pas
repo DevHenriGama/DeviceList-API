@@ -18,6 +18,9 @@ type
     fdMainConnection: TFDConnection;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    fdQueryMainID: TFDAutoIncField;
+    fdQueryMainNAME: TStringField;
+    fdQueryMainADDRESS: TStringField;
   private
     { Private declarations }
   public

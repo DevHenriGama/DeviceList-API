@@ -2,7 +2,7 @@ unit DVL.Model.DeviceClass;
 
 interface
 
-uses DVL.Model.Interfaces, DVL.DAO.IRequest;
+uses DVL.Model.Interfaces, DVL.DAO.IRequest, System.Classes;
 
   type
     TDevices = class(TInterfacedObject, IDevice)
@@ -23,6 +23,7 @@ uses DVL.Model.Interfaces, DVL.DAO.IRequest;
       procedure UpdateRegister;
       procedure DeleteRegister;
       procedure InsertRegister;
+      function GetData : TStringList;
     end;
 
 implementation
@@ -65,6 +66,11 @@ function TDevices.Device_Name(_Name: String): IDevice;
 begin
  Result := Self;
  _FName := _Name;
+end;
+
+function TDevices.GetData: TStringList;
+begin
+ Result := _FRequest.GetData;
 end;
 
 function TDevices.ID_Device(_ID: Integer): IDevice;

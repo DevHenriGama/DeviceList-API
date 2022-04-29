@@ -1,6 +1,9 @@
 unit DVL.Model.Interfaces;
 
 interface
+
+uses
+  System.Classes;
   type
     IDevice = interface
       ['{3D5A03D9-84A0-4FA1-873C-A24FF926E20B}']
@@ -10,6 +13,7 @@ interface
       function Device_Name( _Name : String) : IDevice; overload;
       function Device_Address : String; overload;
       function Device_Address( _Address : String) : IDevice; overload;
+      function GetData : TStringList;
       procedure UpdateRegister;
       procedure DeleteRegister;
       procedure InsertRegister;

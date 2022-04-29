@@ -13,6 +13,12 @@ type
       var Result: string);
     procedure ServerEventEventsnewReplyEvent(var Params: TDWParams;
       var Result: string);
+    procedure ServerEventEventseditReplyEvent(var Params: TDWParams;
+      var Result: string);
+    procedure ServerEventEventsdeleteReplyEvent(var Params: TDWParams;
+      var Result: string);
+    procedure ServerEventEventsdataReplyEvent(var Params: TDWParams;
+      var Result: string);
   private
     { Private declarations }
     _Device : IControllDevice;
@@ -33,12 +39,51 @@ implementation
 
 {$R *.dfm}
 
+procedure TAPISource.ServerEventEventsdataReplyEvent(var Params: TDWParams;
+  var Result: string);
+begin
+ _Device := TControllDevice.Create;
+  try
+     Result := _Device.GetDevices.text;
+  except
+    Result := '{"Request":"ERRO"}';
+  end;
+end;
+
+procedure TAPISource.ServerEventEventsdeleteReplyEvent(var Params: TDWParams;
+  var Result: string);
+begin
+ _Device := TControllDevice.Create;
+  try
+    _Device.ID(Params[0].AsInteger)
+    .DeleteDevice;
+    Result := '{"Request":"OK"}';
+  except
+   Result := '{"Request":"ERRO"}';
+  end;
+end;
+
+procedure TAPISource.ServerEventEventseditReplyEvent(var Params: TDWParams;
+  var Result: string);
+begin
+ _Device := TControllDevice.Create;
+  try
+    _Device.ID(Params[0].AsInteger)
+    .DeviceName(Params[1].AsString)
+    .DeviceAddress(Params[2].AsString)
+    .UpdateDevice;
+    Result := '{"Request":"OK"}';
+  except
+   Result := '{"Request":"ERRO"}';
+  end;
+end;
+
 procedure TAPISource.ServerEventEventsnewReplyEvent(var Params: TDWParams;
   var Result: string);
 begin
  _Device := TControllDevice.Create;
   try
-    _Device.ID(0)
+    _Device
     .DeviceName(Params[0].AsString)
     .DeviceAddress(Params[1].AsString)
     .NewDevice;
