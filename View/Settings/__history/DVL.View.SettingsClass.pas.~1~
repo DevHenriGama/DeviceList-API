@@ -1,0 +1,26 @@
+unit DVL.View.SettingsClass;
+
+interface
+
+uses
+  DVL.View.SettingsInterface, System.IniFiles;
+
+  type
+    TSettings = class(TInterfacedObject, ISettings)
+
+    private
+    _IniFile : TIniFile;
+    public
+    constructor Create;
+    destructor Destroy;override;
+    function StartOnSys : Boolean; overload;
+    procedure StartOnSys( _Value : Boolean);overload;
+    function ServicePort : Integer; overload;
+    procedure ServicePort(_Value : Integer);overload;
+    function AutoStart : Boolean;overload;
+    procedure AutoStart(_Value : Boolean);overload;
+    end;
+
+implementation
+
+end.

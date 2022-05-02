@@ -11,7 +11,9 @@ uses
   DVL.Controll.MainClass in 'Controll\DVL.Controll.MainClass.pas',
   DVL.Controll.Interfaces in 'Controll\DVL.Controll.Interfaces.pas',
   DVL.View.Tester in 'View\DVL.View.Tester.pas' {uFormTester},
-  DV.Controll.APISource in 'Controll\DV.Controll.APISource.pas' {APISource: TDataModule};
+  DV.Controll.APISource in 'Controll\DV.Controll.APISource.pas' {APISource: TDataModule},
+  DVL.View.SettingsInterface in 'View\Settings\DVL.View.SettingsInterface.pas',
+  DVL.View.SettingsClass in 'View\Settings\DVL.View.SettingsClass.pas';
 
 {$R *.res}
 

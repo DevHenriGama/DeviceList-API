@@ -1,0 +1,110 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Device List -  API'
+  ClientHeight = 91
+  ClientWidth = 439
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 15
+  object lblStatus: TLabel
+    Left = 136
+    Top = 12
+    Width = 36
+    Height = 15
+    Caption = 'Offline'
+  end
+  object imgSave: TImage
+    AlignWithMargins = True
+    Left = 391
+    Top = 51
+    Width = 24
+    Height = 24
+    AutoSize = True
+    Center = True
+    Picture.Data = {
+      0954506E67496D61676589504E470D0A1A0A0000000D49484452000000180000
+      00180806000000E0773DF80000000473424954080808087C0864880000000970
+      485973000000A6000000A601DD7DFF380000001974455874536F667477617265
+      007777772E696E6B73636170652E6F72679BEE3C1A0000010C4944415478DA63
+      646060380CC4360C08E008C40240BC9E81306804E20940FC1ECAFF0AC409FFFF
+      FF5F0353C008C4FFD13451620108FC01E2489825B4B000C5125A5900B7849616
+      80C0575A5B80350E5C1920294B90080BBE00310710BF26C582DB40BC8C08C361
+      C009886D49B180AA60D402B22D780BC45748344B07888589B56023309B0790E4
+      5246C60D40CA9F240B809ADA80EC200266AF03AAAD22D7024F20DB9D80053B81
+      6AB7936B01489E9D80053F816AFF936B0128474712B06039506D14B916A803D9
+      96042C380E547B935C0B84806C350216DC02AA7D47AE05EB80EC400216AC07AA
+      0D22D7027E205B918005F7816A3F926AC145209EC1401AC800627D6C16A0375B
+      A8098E00004FFF9A09ECCDCD800000000049454E44AE426082}
+    OnClick = imgSaveClick
+  end
+  object btnService: TButton
+    Left = 24
+    Top = 8
+    Width = 89
+    Height = 25
+    Caption = 'Start Service'
+    TabOrder = 0
+    OnClick = btnServiceClick
+  end
+  object ckAutoStart: TCheckBox
+    Left = 24
+    Top = 55
+    Width = 97
+    Height = 17
+    Caption = 'Auto Start'
+    TabOrder = 1
+  end
+  object ckStartOnSys: TCheckBox
+    Left = 127
+    Top = 55
+    Width = 114
+    Height = 17
+    Caption = 'Start with System'
+    TabOrder = 2
+  end
+  object edtPort: TEdit
+    Left = 256
+    Top = 52
+    Width = 121
+    Height = 23
+    TabOrder = 3
+  end
+  object poolerService: TRESTServicePooler
+    Active = False
+    CORS = False
+    CORS_CustomHeaders.Strings = (
+      'Access-Control-Allow-Origin=*'
+      
+        'Access-Control-Allow-Methods=GET, POST, PATCH, PUT, DELETE, OPTI' +
+        'ONS'
+      
+        'Access-Control-Allow-Headers=Content-Type, Origin, Accept, Autho' +
+        'rization, X-CUSTOM-HEADER')
+    PathTraversalRaiseError = True
+    RequestTimeout = -1
+    ServicePort = 8082
+    ProxyOptions.Port = 8888
+    AuthenticationOptions.AuthorizationOption = rdwAONone
+    SSLMethod = sslvSSLv2
+    SSLVersions = []
+    Encoding = esUtf8
+    RootPath = '/'
+    SSLVerifyMode = []
+    SSLVerifyDepth = 0
+    ForceWelcomeAccess = False
+    CriptOptions.Use = False
+    CriptOptions.Key = 'RDWBASEKEY256'
+    Left = 56
+    Top = 128
+  end
+end
