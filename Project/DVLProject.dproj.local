@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/03 10:12:28.000.765,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/29 12:23:25.000.158,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/09 17:06:25.000.085,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/17 14:01:08.000.157,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/19 11:25:33.000.735,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/30 14:15:42.000.527,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/18 16:00:44.000.370,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/18 16:00:54.000.913,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/27 13:57:02.000.911,=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:30:49.000.078,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.View.Main.dfm=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/04/28 10:30:49.000.078,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.View.Main.pas=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:33:03.000.093,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVLProject.dproj=C:\Users\darke\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/04/28 10:33:51.000.942,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:37:49.000.897,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.DataModule.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:37:49.000.897,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.DataModule.dfm=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.dfm</Transaction>
+    <Transaction>2022/04/28 10:38:24.000.618,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:43:04.000.350,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.Model.DeviceClass.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:43:17.000.493,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 10:43:41.000.560,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.Model.Interfaces.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 13:28:41.000.673,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 13:33:56.000.070,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.Request.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 13:34:10.000.820,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 13:41:27.000.441,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.IRequest.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.Request.pas</Transaction>
+    <Transaction>2022/04/28 13:41:58.000.658,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.RequestClass.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 14:07:35.000.800,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 14:12:29.000.037,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Controll\DVL.Controll.MainClass.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 14:12:37.000.371,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 14:15:01.000.997,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Controll\DVL.Controll.Interfaces.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 14:52:31.000.420,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 14:54:09.000.570,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.dfm=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\View\DVL.View.Tester.dfm</Transaction>
+    <Transaction>2022/04/28 14:54:09.000.570,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\View\DVL.View.Tester.pas</Transaction>
+    <Transaction>2022/04/28 15:25:20.000.272,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\View\DVL.View.Main.dfm=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.View.Main.dfm</Transaction>
+    <Transaction>2022/04/28 15:25:20.000.272,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\View\DVL.View.Main.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.View.Main.pas</Transaction>
+    <Transaction>2022/04/28 15:25:42.000.186,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DAO\DVL.DAO.DataModule.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.DataModule.pas</Transaction>
+    <Transaction>2022/04/28 15:25:42.000.186,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DAO\DVL.DAO.DataModule.dfm=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.DataModule.dfm</Transaction>
+    <Transaction>2022/04/28 15:25:56.000.242,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Model\DVL.Model.Interfaces.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.Model.Interfaces.pas</Transaction>
+    <Transaction>2022/04/28 15:26:05.000.143,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Model\DVL.Model.DeviceClass.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.Model.DeviceClass.pas</Transaction>
+    <Transaction>2022/04/28 15:26:13.000.783,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DAO\DVL.DAO.RequestClass.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.RequestClass.pas</Transaction>
+    <Transaction>2022/04/28 15:26:28.000.315,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DAO\DVL.DAO.IRequest.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\DVL.DAO.IRequest.pas</Transaction>
+    <Transaction>2022/04/28 15:31:00.000.143,=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/28 15:31:18.000.879,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Controll\DV.Controll.APISource.dfm=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.dfm</Transaction>
+    <Transaction>2022/04/28 15:31:18.000.879,C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Controll\DV.Controll.APISource.pas=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapter API\Unit1.pas</Transaction>
+    <Transaction>2022/04/30 18:59:43.000.386,=F:\Progamação\Projects\Delphi\DeviceList API\DeviceList-API\Unit1.pas</Transaction>
+    <Transaction>2022/04/30 19:04:02.000.340,F:\Progamação\Projects\Delphi\DeviceList API\DeviceList-API\Unit1.pas=F:\Progamação\Projects\Delphi\DeviceList API\DeviceList-API\View\Settings\DVL.View.SettingsInterface.pas</Transaction>
+    <Transaction>2022/04/30 19:04:08.000.480,=F:\Progamação\Projects\Delphi\DeviceList API\DeviceList-API\Unit1.pas</Transaction>
+    <Transaction>2022/04/30 19:06:07.000.345,F:\Progamação\Projects\Delphi\DeviceList API\DeviceList-API\Unit1.pas=F:\Progamação\Projects\Delphi\DeviceList API\DeviceList-API\View\Settings\DVL.View.SettingsClass.pas</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Controll"/>
+    <File Path="Controll\DV.Controll.APISource.pas"/>
+    <File Path="Controll\DV.Controll.APISource.dfm"/>
+    <File Path="Controll\DVL.Controll.Interfaces.pas"/>
+    <File Path="Controll\DVL.Controll.MainClass.pas"/>
+    <File Path="DAO"/>
+    <File Path="DAO\DVL.DAO.DataModule.pas"/>
+    <File Path="DAO\DVL.DAO.DataModule.dfm"/>
+    <File Path="DAO\DVL.DAO.IRequest.pas"/>
+    <File Path="DAO\DVL.DAO.RequestClass.pas"/>
+    <File Path="Model"/>
+    <File Path="Model\DVL.Model.DeviceClass.pas"/>
+    <File Path="Model\DVL.Model.Interfaces.pas"/>
+    <File Path="View"/>
+    <File Path="View\Settings"/>
+    <File Path="View\Settings\DVL.View.SettingsClass.pas"/>
+    <File Path="View\Settings\DVL.View.SettingsInterface.pas"/>
+    <File Path="View\DVL.View.Main.pas"/>
+    <File Path="View\DVL.View.Main.dfm"/>
+    <File Path="View\DVL.View.Tester.pas"/>
+    <File Path="View\DVL.View.Tester.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
