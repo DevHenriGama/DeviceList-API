@@ -4,7 +4,6 @@ object dmDados: TdmDados
   Width = 468
   PixelsPerInch = 96
   object fdQueryMain: TFDQuery
-    Active = True
     Connection = fdMainConnection
     SQL.Strings = (
       'SELECT * FROM DEVICE')
@@ -30,8 +29,8 @@ object dmDados: TdmDados
   object fdMainConnection: TFDConnection
     Params.Strings = (
       
-        'Database=F:\Progama'#231#227'o\Projects\Delphi\DeviceList API\DeviceList' +
-        '-API\dv_database.db'
+        'Database=C:\Users\darke\Desktop\Projects\Delphi\DeviceListAdapte' +
+        'r API\Project\dv_database.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
     Connected = True

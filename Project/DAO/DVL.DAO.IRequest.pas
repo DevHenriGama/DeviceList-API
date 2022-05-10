@@ -11,7 +11,7 @@ uses
       procedure Update;
       procedure Insert;
       procedure Delete;
-      function GetData : TStringList;
+      function GetData : String;
     end;
 
 implementation

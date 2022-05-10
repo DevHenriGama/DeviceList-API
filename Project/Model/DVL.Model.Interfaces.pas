@@ -13,7 +13,7 @@ uses
       function Device_Name( _Name : String) : IDevice; overload;
       function Device_Address : String; overload;
       function Device_Address( _Address : String) : IDevice; overload;
-      function GetData : TStringList;
+      function GetData : String;
       procedure UpdateRegister;
       procedure DeleteRegister;
       procedure InsertRegister;

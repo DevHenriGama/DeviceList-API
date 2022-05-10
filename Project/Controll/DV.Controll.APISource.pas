@@ -44,7 +44,7 @@ procedure TAPISource.ServerEventEventsdataReplyEvent(var Params: TDWParams;
 begin
  _Device := TControllDevice.Create;
   try
-     Result := _Device.GetDevices.text;
+     Result := _Device.GetDevices;
   except
     Result := '{"Request":"ERRO"}';
   end;

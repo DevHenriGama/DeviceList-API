@@ -23,7 +23,7 @@ uses DVL.Model.Interfaces, DVL.DAO.IRequest, System.Classes;
       procedure UpdateRegister;
       procedure DeleteRegister;
       procedure InsertRegister;
-      function GetData : TStringList;
+      function GetData : String;
     end;
 
 implementation
@@ -68,7 +68,7 @@ begin
  _FName := _Name;
 end;
 
-function TDevices.GetData: TStringList;
+function TDevices.GetData: String;
 begin
  Result := _FRequest.GetData;
 end;

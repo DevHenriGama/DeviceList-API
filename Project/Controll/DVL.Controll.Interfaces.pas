@@ -11,7 +11,7 @@ type
     procedure NewDevice;
     procedure UpdateDevice;
     procedure DeleteDevice;
-    function GetDevices : TStringList;
+    function GetDevices : String;
     function ID( _ID : Integer) : IControllDevice;
     function DeviceName(_Name : String) : IControllDevice;
     function DeviceAddress(_Address : String) : IControllDevice;

@@ -4,7 +4,7 @@ unit DVL.DAO.RequestClass;
 interface
 
 uses DVL.DAO.IRequest,DVL.DAO.DataModule, DVL.Model.DeviceClass,
-  System.Classes;
+  System.Classes, System.JSON;
   type
 
     TDAORequest = class(TInterfacedObject, IDAORequest)
@@ -18,13 +18,13 @@ uses DVL.DAO.IRequest,DVL.DAO.DataModule, DVL.Model.DeviceClass,
     procedure Update;
     procedure Insert;
     procedure Delete;
-    function GetData : TStringList;
+    function GetData : string;
 
     end;
 
 implementation
 
-uses System.JSON, System.SysUtils;
+uses System.SysUtils;
 
 
 
@@ -37,6 +37,7 @@ begin
  _data := TdmDados.Create(nil);
  _objList := TStringList.Create;
 end;
+
 
 procedure TDAORequest.Delete;
 begin
@@ -57,11 +58,11 @@ begin
   inherited;
 end;
 
-function TDAORequest.GetData: TStringList;
+function TDAORequest.GetData: String;
 var jObject : TJSONObject; I : Integer;
 begin
  try
-
+ jObject := TJSONObject.Create;
     with _data.fdQueryMain do begin
    Close;
    SQL.Clear;
@@ -72,7 +73,7 @@ begin
 
    if RecordCount > 0 then begin
      for I := 0 to RecordCount -1 do begin
-      jObject := TJSONObject.Create;
+
       try
         jObject.AddPair('id',FieldByName('ID').Text);
         jObject.AddPair(FieldByName('NAME').Text,FieldByName('ADDRESS').Text);
@@ -82,14 +83,14 @@ begin
           Next;
 
       finally
-       jObject.Free;
+
       end;
      end;
    end;
-   Result := _objList;
+   Result := jObject.ToString;
  end;
  finally
-
+           jObject.Free;
  end;
 end;
 

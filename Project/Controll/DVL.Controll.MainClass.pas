@@ -18,7 +18,7 @@ uses DVL.Controll.Interfaces, DVL.Model.DeviceClass, DVL.Model.Interfaces,
     function ID( _ID : Integer) : IControllDevice;
     function DeviceName(_Name : String) : IControllDevice;
     function DeviceAddress(_Address : String) : IControllDevice;
-    function GetDevices : TStringList;
+    function GetDevices : String;
     procedure NewDevice;
     procedure UpdateDevice;
     procedure DeleteDevice;
@@ -55,7 +55,7 @@ Result := Self;
 FDeviceName := _Name;
 end;
 
-function TControllDevice.GetDevices: TStringList;
+function TControllDevice.GetDevices: String;
 begin
  Result := Device.GetData;
 end;
