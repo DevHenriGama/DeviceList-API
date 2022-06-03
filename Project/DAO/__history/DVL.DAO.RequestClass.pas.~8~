@@ -85,8 +85,8 @@ begin
   jDevices.AddPair('Devices',JArray);
 
  end;
- except
-  raise Exception.Create('Erro to Load data');
+ finallY
+
  end;
  Result := jDevices.ToString;
  jDevices.Free;
@@ -104,7 +104,6 @@ begin
     ExecSQL;
   end;
 end;
-
 
 procedure TDAORequest.Update;
 begin

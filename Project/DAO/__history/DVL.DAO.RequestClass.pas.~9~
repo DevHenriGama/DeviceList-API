@@ -105,7 +105,6 @@ begin
   end;
 end;
 
-
 procedure TDAORequest.Update;
 begin
    with _data.fdQueryMain do begin

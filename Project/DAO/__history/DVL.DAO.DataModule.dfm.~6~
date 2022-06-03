@@ -1,6 +1,8 @@
 object dmDados: TdmDados
+  OnCreate = DataModuleCreate
   Height = 356
   Width = 468
+  PixelsPerInch = 96
   object fdQueryMain: TFDQuery
     Connection = fdMainConnection
     SQL.Strings = (
@@ -31,8 +33,8 @@ object dmDados: TdmDados
         'r API\Project\dv_database.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
-    BeforeConnect = fdMainConnectionBeforeConnect
     Left = 40
     Top = 16
   end

@@ -21,7 +21,7 @@ type
     fdQueryMainID: TFDAutoIncField;
     fdQueryMainNAME: TStringField;
     fdQueryMainADDRESS: TStringField;
-    procedure fdMainConnectionBeforeConnect(Sender: TObject);
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,10 +38,10 @@ uses VCL.Forms;
 
 {$R *.dfm}
 
-procedure TdmDados.fdMainConnectionBeforeConnect(Sender: TObject);
+procedure TdmDados.DataModuleCreate(Sender: TObject);
 var Dir : String;
 begin
- Dir := ExtractFilePath(Application.ExeName) + 'database\dv_database.db';
+ Dir := ExtractFilePath(Application.ExeName) + '/database/dv_database.db';
  fdMainConnection.Params.Database := Dir;
 end;
 

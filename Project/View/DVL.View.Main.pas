@@ -70,6 +70,7 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+ReportMemoryLeaksOnShutdown := true;
 poolerService.ServerMethodClass := TAPISource;
 _Settings := TSettings.Create;
 

@@ -11,6 +11,7 @@ uses DVL.DAO.IRequest,DVL.DAO.DataModule, DVL.Model.DeviceClass,
     private
      FDevices : TDevices;
      _data : TdmDados;
+     _objList : TStringList;
     public
     constructor Create(DeviceClass :TDevices);
     destructor Destroy; override;
@@ -34,6 +35,7 @@ constructor TDAORequest.Create(DeviceClass: TDevices);
 begin
  FDevices := DeviceClass;
  _data := TdmDados.Create(nil);
+ _objList := TStringList.Create;
 end;
 
 
@@ -51,45 +53,45 @@ end;
 
 destructor TDAORequest.Destroy;
 begin
+    _objList.Free;
     _data.Free;
   inherited;
 end;
 
 function TDAORequest.GetData: String;
-var jObject, jDevices : TJSONObject; I : Integer;
-JArray : TJSONArray;
+var jObject : TJSONObject; I : Integer;
 begin
  try
-    jDevices := TJSONObject.Create;
-    jObject := TJSONObject.Create;
-    JArray := TJSONArray.Create;
-
-
+ jObject := TJSONObject.Create;
     with _data.fdQueryMain do begin
    Close;
    SQL.Clear;
    SQL.Add('SELECT * FROM DEVICE');
    Open;
 
-   jDevices.AddPair('Total',RecordCount);
+   _objList.Add('{"total":' + IntToStr(RecordCount) + '}');
 
    if RecordCount > 0 then begin
      for I := 0 to RecordCount -1 do begin
-        jObject.AddPair('DeviceName'+I.ToString,FieldByName('NAME').Text);
-        jObject.AddPair('DeviceAddress'+I.ToString,FieldByName('ADDRESS').Text);
+
+      try
+        jObject.AddPair('id',FieldByName('ID').Text);
+        jObject.AddPair(FieldByName('NAME').Text,FieldByName('ADDRESS').Text);
+       _objList.Add(jObject.ToString);
+
        if not EOF then
           Next;
+
+      finally
+
+      end;
      end;
    end;
-  JArray.AddElement(jObject);
-  jDevices.AddPair('Devices',JArray);
-
+   Result := jObject.ToString;
  end;
- except
-  raise Exception.Create('Erro to Load data');
+ finally
+           jObject.Free;
  end;
- Result := jDevices.ToString;
- jDevices.Free;
 end;
 
 procedure TDAORequest.Insert;
@@ -104,7 +106,6 @@ begin
     ExecSQL;
   end;
 end;
-
 
 procedure TDAORequest.Update;
 begin

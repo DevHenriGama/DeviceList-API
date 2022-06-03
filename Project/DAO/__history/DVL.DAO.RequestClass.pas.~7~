@@ -83,13 +83,13 @@ begin
    end;
   JArray.AddElement(jObject);
   jDevices.AddPair('Devices',JArray);
-
+   Result := jDevices.ToString;
  end;
- except
-  raise Exception.Create('Erro to Load data');
+ finallY
+  jObject.Free;
+  JArray.Free;
+  jDevices.Free;
  end;
- Result := jDevices.ToString;
- jDevices.Free;
 end;
 
 procedure TDAORequest.Insert;
@@ -104,7 +104,6 @@ begin
     ExecSQL;
   end;
 end;
-
 
 procedure TDAORequest.Update;
 begin

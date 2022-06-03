@@ -7,28 +7,30 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uDWAbout, uRESTDWBase, Vcl.StdCtrls,
   DV.Controll.APISource, DVL.View.SettingsInterface, DVL.View.SettingsClass,
   Vcl.Buttons, Vcl.Imaging.pngimage, Vcl.ExtCtrls,Winapi.WinSock,
-  IdBaseComponent, IdComponent, IdIPWatch, Vcl.Menus;
+  IdBaseComponent, IdComponent, IdIPWatch, Vcl.Menus, Vcl.Imaging.GIFImg,
+  Vcl.WinXCtrls,MIDASLIB;
 
 type
   TfrmMain = class(TForm)
-    btnService: TButton;
-    lblStatus: TLabel;
     poolerService: TRESTServicePooler;
-    ckAutoStart: TCheckBox;
-    ckStartOnSys: TCheckBox;
-    edtPort: TEdit;
-    imgSave: TImage;
-    lblLocalP: TLabel;
     IdIPWatch1: TIdIPWatch;
     SystemIcon: TTrayIcon;
     menuIcon: TPopupMenu;
     Show1: TMenuItem;
     Close1: TMenuItem;
     Panel1: TPanel;
-    Image1: TImage;
-    Image2: TImage;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    ckAutoStart: TCheckBox;
+    ckStartOnSys: TCheckBox;
+    edtPort: TEdit;
+    imgSave: TImage;
+    imAPI: TImage;
+    labelPort: TLabel;
+    lblLocalP: TLabel;
+    labelIP: TLabel;
+    tsPower: TToggleSwitch;
     procedure FormCreate(Sender: TObject);
-    procedure btnServiceClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure imgSaveClick(Sender: TObject);
     procedure Close1Click(Sender: TObject);
@@ -38,6 +40,8 @@ type
     procedure Image2Click(Sender: TObject);
     procedure Panel1MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure tsPowerClick(Sender: TObject);
+    procedure lblLocalPClick(Sender: TObject);
   private
     { Private declarations }
     _Settings : ISettings;
@@ -55,15 +59,9 @@ var
 implementation
 
 uses
-  IdWinsock2;
+  IdWinsock2, ShellAPI;
 
 {$R *.dfm}
-
-procedure TfrmMain.btnServiceClick(Sender: TObject);
-begin
- ServicePower;
-
-end;
 
 procedure TfrmMain.Close1Click(Sender: TObject);
 begin
@@ -89,15 +87,13 @@ end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-
      poolerService.ServicePort := _Settings.ServicePort;
      UpdateUISettings;
 
-
-
-     if _Settings.AutoStart then
+     if _Settings.AutoStart then  begin
+        tsPower.State := tssOn;
         ServicePower;
-
+     end;
 end;
 
 
@@ -126,6 +122,11 @@ begin
 
 end;
 
+procedure TfrmMain.lblLocalPClick(Sender: TObject);
+begin
+ShellExecute(handle,'open',Pchar(lblLocalP.Caption + '/status'),nil,nil, SW_SHOWMAXIMIZED);
+end;
+
 procedure TfrmMain.Panel1MouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 const SG = $F012;
@@ -146,25 +147,28 @@ end;
 
 procedure TfrmMain.ServicePower;
 begin
-  if poolerService.Active then begin
-  btnService.Caption := 'Start Server';
-  lblStatus.Caption := 'Offline';
-  lblLocalP.Caption := '0.0.0.0';
-  poolerService.Active := False;
+  if tsPower.State = tssOn then begin
+  tsPower.State := tssOn;
+  lblLocalP.Caption := 'http://' + IdIPWatch1.LocalIP + ':'+ edtPort.Text;
+  poolerService.Active := True;
  end
  else
  begin
-  btnService.Caption := 'Stop Server';
-  lblStatus.Caption := 'Online';
-  lblLocalP.Caption := 'http://' + IdIPWatch1.LocalIP + ':'+ edtPort.Text;
+    tsPower.State := tssOff;
+  lblLocalP.Caption := '0.0.0.0';
+  poolerService.Active := False;
 
-  poolerService.Active := True;
  end;
 end;
 
 procedure TfrmMain.Show1Click(Sender: TObject);
 begin
 Self.Show;
+end;
+
+procedure TfrmMain.tsPowerClick(Sender: TObject);
+begin
+ServicePower;
 end;
 
 procedure TfrmMain.UpdateUISettings;
