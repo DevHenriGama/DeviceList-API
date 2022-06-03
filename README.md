@@ -13,7 +13,11 @@
      *GetData
       - Data Request
   ### End-Points
-      -Insert: http:// <IP> :8082/new?name=<Value>&address=<Value>
-      -data : http:// <IP> :8082/data
+      -Insert: http:// <IP>:<Port>/new?name=<Value>&address=<Value>
+      -Delete: http:// <IP>:<Port>/del?id=<id>
+      -Update: http:// <IP>:<Port>/edit?id=<id>&name=<n>&address=<n>
+      -data : http:// <IP>:<Port>/data
+      
+     
      
      
